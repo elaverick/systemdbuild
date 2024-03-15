@@ -1,5 +1,5 @@
 Summary: System and Service Manager
-Name: Systemd
+Name: systemd
 Version: %{VERSION}
 Release: 1%{PKG_RELEASE}
 License: LGPLv2+
@@ -18,7 +18,7 @@ BuildRequires: libselinux-devel
 Systemd is a system and service manager for Linux, compatible with SysV and LSB init scripts.
 
 %prep
-%setup -q
+%setup -q -n %{name}-stable-%{version}
 
 %build
 PKG_CONFIG_PATH="/usr/lib/pkgconfig:/tools/lib/pkgconfig" \
