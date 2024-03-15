@@ -1,9 +1,9 @@
 Summary: System and Service Manager
-Name: %{name}
+Name: Systemd
 Version: %{VERSION}
 Release: 1%{PKG_RELEASE}
 License: LGPLv2+
-Source0: v%{version}.tar.gz
+Source0: v%{VERSION}.tar.gz
 
 # Dependencies
 BuildRequires: gcc
