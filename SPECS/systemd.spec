@@ -1,7 +1,7 @@
-# Include the original definition of %meson macro
+# Include the original definition of meson macro
 %global original_meson %meson
 
-# Redefine the %meson macro without --buildtype=plain
+# Redefine the meson macro without --buildtype=plain
 %global meson %(echo "%{original_meson}" | sed 's/--buildtype=plain//')
 
 Summary: System and Service Manager
