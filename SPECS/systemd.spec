@@ -1,9 +1,3 @@
-# Include the original definition of meson macro
-%global original_meson %meson
-
-# Redefine the meson macro without --buildtype=plain
-%global meson %(echo "%{original_meson}" | sed 's/--buildtype=plain//')
-
 Summary: System and Service Manager
 Name: systemd
 Version: %{VERSION}
@@ -29,10 +23,24 @@ Systemd is a system and service manager for Linux, compatible with SysV and LSB 
 %build
 PKG_CONFIG_PATH="/usr/lib/pkgconfig:/tools/lib/pkgconfig" \
 LANG=en_US.UTF-8                   \
-%meson \
+%__meson \
       --prefix=/usr                \
       --sysconfdir=/etc            \
       --localstatedir=/var         \
+      --libdir=%{_libdir} \
+      --libexecdir=%{_libexecdir} \
+      --bindir=%{_bindir} \
+      --sbindir=%{_sbindir} \
+      --includedir=%{_includedir} \
+      --datadir=%{_datadir} \
+      --mandir=%{_mandir} \
+      --infodir=%{_infodir} \
+      --localedir=%{_datadir}/locale \
+      --sysconfdir=%{_sysconfdir} \
+      --localstatedir=%{_localstatedir} \
+      --sharedstatedir=%{_sharedstatedir} \
+      --wrap-mode=%{__meson_wrap_mode} \
+      --auto-features=%{__meson_auto_features} \
       -Dblkid=true                 \
       -Dbuildtype=release          \
       -Ddefault-dnssec=no          \
@@ -48,7 +56,10 @@ LANG=en_US.UTF-8                   \
       -Dsysusers=false             \
       -Dumount-path=/bin/umount    \
       -Db_lto=false                \
-      -Drpmmacrosdir=no
+      -Drpmmacrosdir=no            \
+      %{_vpath_srcdir} %{_vpath_builddir} \
+      %{nil}
+
 %meson_build
 
 %install
