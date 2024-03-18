@@ -21,8 +21,7 @@ BuildRequires: libselinux-devel
 Systemd is a system and service manager for Linux, compatible with SysV and LSB init scripts.
 
 %prep
-export PYTHONPATH=/usr/local/lib/python3.9/site-packages/:/usr/local/lib64/python3.9/site-
-packages/
+export PYTHONPATH=/usr/local/lib/python3.9/site-packages/:/usr/local/lib64/python3.9/site-packages/
 %setup -q -n %{name}-stable-%{version}
 %patch0 -p1
 
