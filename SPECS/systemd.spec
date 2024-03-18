@@ -4,6 +4,7 @@ Version: %{VERSION}
 Release: 1%{PKG_RELEASE}
 License: LGPLv2+
 Source0: v%{VERSION}.tar.gz
+Patch0: mesonbuild.patch
 
 # Dependencies
 BuildRequires: gcc
@@ -19,6 +20,7 @@ Systemd is a system and service manager for Linux, compatible with SysV and LSB 
 
 %prep
 %setup -q -n %{name}-stable-%{version}
+%patch0 -p1
 
 %build
 PKG_CONFIG_PATH="/usr/lib/pkgconfig:/tools/lib/pkgconfig" \
@@ -42,7 +44,10 @@ LANG=en_US.UTF-8                   \
       --wrap-mode=%{__meson_wrap_mode} \
       --auto-features=%{__meson_auto_features} \
       -Dblkid=true                 \
+      -Dntp-servers='ntp1.npl.co.uk ntp2.npl.co.uk' \
       -Dbuildtype=release          \
+      -Dbpf-framework=true         \
+      -Dmode=release               \
       -Ddefault-dnssec=no          \
       -Dfirstboot=false            \
       -Dinstall-tests=false        \
