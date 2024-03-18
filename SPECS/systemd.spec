@@ -80,7 +80,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root,-)
-%doc README
+
 /bin/journalctl
 /bin/loginctl
 /bin/machinectl
@@ -102,7 +102,7 @@ rm -rf $RPM_BUILD_ROOT
 /etc/binfmt.d/
 
 # Init scripts
-/etc/init.d/README
+%doc /etc/init.d/README
 
 # Kernel
 /etc/kernel/install.d/
@@ -137,7 +137,7 @@ rm -rf $RPM_BUILD_ROOT
 /etc/udev/udev.conf
 
 # XDG
-/etc/xdg/systemd/user -> ../../systemd/user
+/etc/xdg/systemd/user
 
 #lib
 /lib/libnss_myhostname.so.2
@@ -153,7 +153,7 @@ rm -rf $RPM_BUILD_ROOT
 
 # modprobe.d
 /lib/modprobe.d/
-/lib/modprobe.d/README
+%doc /lib/modprobe.d/README
 /lib/modprobe.d/systemd.conf
 
 # security
@@ -502,7 +502,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/udev/hwdb.d/70-sound-card.hwdb
 /lib/udev/hwdb.d/70-touchpad.hwdb
 /lib/udev/hwdb.d/80-ieee1394-unit-function.hwdb
-/lib/udev/hwdb.d/README
+%doc /lib/udev/hwdb.d/README
 
 # udev/rules.d
 /lib/udev/rules.d/
@@ -539,7 +539,7 @@ rm -rf $RPM_BUILD_ROOT
 /lib/udev/rules.d/81-net-dhcp.rules
 /lib/udev/rules.d/90-vconsole.rules
 /lib/udev/rules.d/99-systemd.rules
-/lib/udev/rules.d/README
+%doc /lib/udev/rules.d/README
 
 # usr
 /usr/bin/oomctl
@@ -582,7 +582,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/tmpfiles.d/systemd-nspawn.conf
 /usr/lib/tmpfiles.d/systemd-network.conf
 /usr/lib/tmpfiles.d/static-nodes-permissions.conf
-/usr/lib/tmpfiles.d/README
+%doc /usr/lib/tmpfiles.d/README
 /usr/lib/tmpfiles.d/systemd-pstore.conf
 /usr/lib/tmpfiles.d/portables.conf
 /usr/lib/environment.d/99-environment.conf
@@ -630,7 +630,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/pam.d/systemd-user
 /usr/lib/sysctl.d/50-default.conf
 /usr/lib/sysctl.d/50-coredump.conf
-/usr/lib/sysctl.d/README
+%doc /usr/lib/sysctl.d/README
 /usr/lib/sysctl.d/50-pid-max.conf
 /usr/lib/kernel/install.conf
 /usr/lib/kernel/install.d/50-depmod.install
@@ -816,7 +816,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/doc/systemd/TRANSIENT-SETTINGS.md
 /usr/share/doc/systemd/ENVIRONMENT.md
 /usr/share/doc/systemd/NEWS
-/usr/share/doc/systemd/README
+%doc /usr/share/doc/systemd/README
 /usr/share/doc/systemd/LICENSES/lookup3-public-domain.txt
 /usr/share/doc/systemd/LICENSES/murmurhash2-public-domain.txt
 /usr/share/doc/systemd/LICENSES/Linux-syscall-note.txt
