@@ -100,6 +100,7 @@ rm -rf $RPM_BUILD_ROOT
 /bin/systemd-tmpfiles
 /bin/systemd-tty-ask-password-agent
 /bin/udevadm
+
 # Binfmt
 /etc/binfmt.d/
 
@@ -113,7 +114,6 @@ rm -rf $RPM_BUILD_ROOT
 /etc/sysctl.d/
 
 # Systemd
-/etc/systemd/
 /etc/systemd/coredump.conf
 /etc/systemd/journald.conf
 /etc/systemd/logind.conf
@@ -141,6 +141,9 @@ rm -rf $RPM_BUILD_ROOT
 # XDG
 /etc/xdg/systemd/user
 
+# X11
+/etc/X11/xinit/xinitrc.d/50-systemd-user.sh
+
 #lib
 /lib/libnss_myhostname.so.2
 /lib/libnss_mymachines.so.2
@@ -154,7 +157,6 @@ rm -rf $RPM_BUILD_ROOT
 /lib/libudev.so.1.7.5
 
 # modprobe.d
-/lib/modprobe.d/
 %doc /lib/modprobe.d/README
 /lib/modprobe.d/systemd.conf
 
@@ -463,7 +465,6 @@ rm -rf $RPM_BUILD_ROOT
 /lib/systemd/systemd-oomd
 
 # udev
-/lib/udev/
 /lib/udev/ata_id
 /lib/udev/cdrom_id
 /lib/udev/dmi_memory_id
@@ -473,7 +474,6 @@ rm -rf $RPM_BUILD_ROOT
 /lib/udev/v4l_id
 
 # udev/hwdb.d
-/lib/udev/hwdb.d/
 /lib/udev/hwdb.d/20-OUI.hwdb
 /lib/udev/hwdb.d/20-acpi-vendor.hwdb
 /lib/udev/hwdb.d/20-bluetooth-vendor-product.hwdb
@@ -507,7 +507,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc /lib/udev/hwdb.d/README
 
 # udev/rules.d
-/lib/udev/rules.d/
 /lib/udev/rules.d/50-udev-default.rules
 /lib/udev/rules.d/60-autosuspend.rules
 /lib/udev/rules.d/60-block.rules
