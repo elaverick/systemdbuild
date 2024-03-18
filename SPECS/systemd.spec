@@ -134,6 +134,9 @@ rm -rf $RPM_BUILD_ROOT
 # Tmpfiles
 /etc/tmpfiles.d/
 
+# Udev
+/etc/udev/udev.conf
+
 # XDG
 /etc/xdg/systemd/user
 
