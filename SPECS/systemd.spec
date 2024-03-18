@@ -26,6 +26,7 @@ export PYTHONPATH=/usr/local/lib/python3.9/site-packages/:/usr/local/lib64/pytho
 %patch0 -p1
 
 %build
+export PYTHONPATH=/usr/local/lib/python3.9/site-packages/:/usr/local/lib64/python3.9/site-packages/
 PKG_CONFIG_PATH="/usr/lib/pkgconfig:/tools/lib/pkgconfig" \
 LANG=en_US.UTF-8                   \
 %__meson \
@@ -70,6 +71,7 @@ LANG=en_US.UTF-8                   \
       -Drpmmacrosdir=no            \
       %{_vpath_srcdir} %{_vpath_builddir} \
       %{nil}
+
 
 %meson_build
 
